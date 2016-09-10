@@ -1,6 +1,7 @@
 JMX:
 http://www.journaldev.com/1352/what-is-jmx-mbean-jconsole-tutorial
 https://en.wikipedia.org/wiki/Java_Management_Extensions
+
 Unleashing Jconsole: http://www.oracle.com/technetwork/articles/java/jconsole-1564139.html
 
 Java Managed Extentions : It's a java technology that supplies tools for managing and monitoring applications, system objects, devices (such as printers) and service-oriented networks.
