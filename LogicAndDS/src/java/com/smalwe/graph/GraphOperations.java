@@ -60,7 +60,7 @@ public class GraphOperations {
 		q.add(n);
 		
 		GraphNode<Integer> temp;
-		
+		//white = 0; grey = 1; black =2
 		while(!q.isEmpty()){
 			temp = q.poll();
 			temp.setColor(2);
