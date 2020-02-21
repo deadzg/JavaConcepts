@@ -2,3 +2,7 @@ bin/**
 build/**
 .*
 !/.gitignore
+
+# IntelliJ
+**/out/
+*.iml
