@@ -3,6 +3,7 @@ package com.smalwe;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -62,5 +63,79 @@ public class StreamUsables {
                 .collect(Collectors.toList()));
         rs.stream().forEach( r -> System.out.println(r[0] + "->" + r[1]));
     }
+
+    /**
+     * How would you extend the previous example to return only pairs whose sum is divisible by 3
+     */
+    public static void allPairsSumDivisible(Integer[] numsA, Integer[] numsB, int div) {
+        List<Integer[]> rs = (Arrays.asList(numsA)
+                .stream()
+                .flatMap( i -> Arrays.asList(numsB).stream()
+                        .filter(j -> (i + j) % div == 0)
+                        .map( j -> new Integer[] {i, j}))
+
+                .collect(Collectors.toList()));
+        rs.stream().forEach( r -> System.out.println(r[0] + "->" + r[1]));
+    }
+
+    /**
+     * Checking to see if a predicate matches at least one element
+     */
+    public static void ifAnyElementMatches(Integer[] numsA) {
+        System.out.println(Arrays.asList(numsA)
+                .stream()
+                .anyMatch(i -> i%3 == 0));
+    }
+
+    /**
+     * Checking to see if a predicate matches all the elements
+     */
+    public static void ifAllElementMatches(Integer[] numsA) {
+        System.out.println(Arrays.asList(numsA)
+                .stream()
+                .allMatch(i -> i%3 == 0));
+    }
+
+    /**
+     * Checking to see if a predicate does not matches all the elements
+     */
+    public static void ifNoneElementMatches(Integer[] numsA) {
+        System.out.println(Arrays.asList(numsA)
+                .stream()
+                .noneMatch(i -> i%3 == 0));
+    }
+
+    /**
+     * Find an element
+     */
+    public static void findAnElementInGivenStream(Integer[] numsA) {
+         Arrays.asList(numsA).stream().filter(i -> i % 3 == 0).findAny().ifPresent( i -> System.out.println("Element found"));
+
+    }
+
+    /**
+     * Find first element
+     */
+    public static void findFirstElementInGivenStream(Integer[] numsA) {
+        Arrays.asList(numsA).stream().filter(i -> i % 3 == 0).findFirst().ifPresent( i -> System.out.println("Element found"));
+
+    }
+
+    /**
+     * Notes:
+     * the terminal operations you’ve seen return a boolean (allMatch and so on), void (forEach), or an Optional object (findAny and so on). You’ve also been using collect to combine all elements in a stream into a List.
+     */
+
+    /**
+     * Sum of all elements in an array
+     */
+    public static void sumAllElements(Integer[] nums) {
+        System.out.println(Arrays.asList(nums)
+                .stream()
+                .reduce(0, (a,b) -> a + b));
+        //reduce(0, Integer:: sum)
+
+    }
+
 
 }

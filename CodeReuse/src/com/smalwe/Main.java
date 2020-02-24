@@ -55,6 +55,17 @@ public class Main {
 
         su.allPairs(new Integer[]{1,3,4}, new Integer[] {67,45});
 
+        System.out.println("==========");
 
+        su.allPairsSumDivisible(new Integer[]{1,3,4}, new Integer[] {67,45}, 7);
+
+        su.ifAnyElementMatches(new Integer[]{1,5,4});
+        su.ifAllElementMatches(new Integer[]{3,6,9});
+        su.ifNoneElementMatches(new Integer[]{1,5,4});
+
+
+        su.findAnElementInGivenStream(new Integer[]{1,5,3});
+
+        su.sumAllElements(new Integer[]{1,5,3});
     }
 }
