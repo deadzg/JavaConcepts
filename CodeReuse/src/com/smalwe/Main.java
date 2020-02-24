@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         DataProcessing dp = new DataProcessing();
+        StreamUsables su = new StreamUsables();
 
         Map<String, String> inputMapForSortMapByKey = new HashMap<>();
         inputMapForSortMapByKey.put("country1", "India");
@@ -37,5 +38,23 @@ public class Main {
 
 
         dp.findWordCount(inputForRegexMatcher);
+
+
+        System.out.println(su.lowCalDishNames(200, Arrays.asList(
+                new Dish(200, "Burrito"),
+                new Dish(400, "Loaf"),
+                new Dish(1000, "Paneer"),
+                new Dish(1000, "Sweets"),
+                new Dish(100, "Butter"))));
+
+        System.out.println(su.charactersInEachWord("The new way of thinking is to code"));
+
+        String[] words = {"Hellow", "World"};
+
+        su.uniqueChars(words);
+
+        su.allPairs(new Integer[]{1,3,4}, new Integer[] {67,45});
+
+
     }
 }
