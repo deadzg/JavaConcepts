@@ -93,4 +93,6 @@ public class DataProcessing {
     public static List<Person> sortListOnCustomRule(List<Person> plist) {
         return plist.stream().sorted(Comparator.naturalOrder()).collect(Collectors.toList());
     }
+
+
 }
