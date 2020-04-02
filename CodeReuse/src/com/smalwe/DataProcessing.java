@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 
 /**
@@ -94,5 +95,14 @@ public class DataProcessing {
         return plist.stream().sorted(Comparator.naturalOrder()).collect(Collectors.toList());
     }
 
+    public static Queue<Project> convertRelatedArrayToPriorityQueue(int[] Profits, int[] Capital) {
+        Comparator<Project> cCapital = (a,b) -> a.getCapital().compareTo(b.getCapital());
+        Comparator<Project> cProfit = (a,b) -> b.getProfit().compareTo(a.getProfit());
+        Queue<Project> projectListByCapital = IntStream.range(0, Capital.length)
+                .mapToObj(i -> new Project(Capital[i], Profits[i]))
+                .collect(Collectors.toCollection(() -> new PriorityQueue<Project>(cCapital)));
+
+        return projectListByCapital;
+    }
 
 }
