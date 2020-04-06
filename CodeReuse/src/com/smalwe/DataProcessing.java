@@ -105,4 +105,17 @@ public class DataProcessing {
         return projectListByCapital;
     }
 
+    public static String convertCharArrayToString(char[] ca) {
+        return new String(ca);
+    }
+
+    public static Map<String, List<Integer>> inverseMap(Map<Integer, String> mapStrs) {
+        Map<String, List<Integer>> inverseMap = mapStrs.entrySet()
+                .stream()
+                .collect(Collectors.groupingBy(Map.Entry::getValue, Collectors.mapping(Map.Entry::getKey, Collectors.toList())));
+        return inverseMap;
+    }
+
+
+
 }
