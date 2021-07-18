@@ -6,3 +6,5 @@ build/**
 # IntelliJ
 **/out/
 *.iml
+
+jwks-gen/rsa-files/
