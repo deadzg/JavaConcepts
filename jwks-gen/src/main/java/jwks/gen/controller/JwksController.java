@@ -28,6 +28,8 @@ public class JwksController {
         // Output the public RSA JWK parameters only
         System.out.println(jwk.toPublicJWK());
 
+
+        // Test Private Key
         JWK myJwk = JWK.parseFromPEMEncodedObjects("-----BEGIN RSA PRIVATE KEY-----\n"
                 + "MIIG5AIBAAKCAYEA3LBEtAbcDVun/iJFeMQPexRH+zoIXQa1defMZ/VarLfAUxeG\n"
                 + "YqLxFrPJcvMIl3agj7Q/FQr728A4qolkB3V5H2jpET2KrB+OliNPMWzqz1ne9RUC\n"
