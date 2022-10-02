@@ -37,4 +37,5 @@ done
 cp build-template.gradle $BUILD_GRADLE_PATH
 echo "Build Gradle Template copied"
 
-sed -i '.bak' "s/{package_name}/$2/g" $BUILD_GRADLE_PATH
+#https://mkyong.com/mac/sed-command-hits-undefined-label-error-on-mac-os-x/
+sed -i '' "s/{package_name}/$2/g" $BUILD_GRADLE_PATH
